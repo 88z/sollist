@@ -252,7 +252,7 @@ $('#custom-hover').sollist({
 
 $(".footer .sollist").sollist({
     profiles: {
-        github: 'https://github.com/88z'
+        github: 'https://github.com/88z/sollist'
     }
     ,theme: 'lee-gargano-circle-white'
     ,hoverEffect: 'rotate'
