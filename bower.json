@@ -24,6 +24,6 @@
     "list"
   ],
   "main":  ["dist/jquery.sollist.min.js",
-            "dist/jquery.sollist.min.css"
+            "dist/jquery.sollist.min.css",
             "dist/sollist-themes/*"]
 }
