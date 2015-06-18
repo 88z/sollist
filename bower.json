@@ -1,0 +1,19 @@
+{
+  "name": "sollist",
+  "version": "1.0",
+  "authors": [
+    "Sasha Zhuravlev <paperairplane89@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=2.1.4",
+    "tooltipster": ">=3.3.0"
+  }
+}
