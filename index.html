@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="88z">
+        <!-- <link rel="icon" href="favicon.ico"> -->
+
+        <title>Sollist - jQuery social buttons plugin</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="docs-assets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="docs-assets/css/hl-styles/rainbow.css" rel="stylesheet">
+        <link href="docs-assets/css/style.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Teko:300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href="dist/jquery.sollist.min.css" rel="stylesheet">
+        <link href="docs-assets/css/tooltipster.css" rel="stylesheet">
+    </head>
+        
+    <body data-spy="scroll" data-target="#menu">
+    <div class="redstrip">
+    </div>
+    <div class="header">
+        <div class="content">
+            <div class="title">
+                <span class="sollist">sollist</span>
+            </div>
+            <div class = "description">
+                jQuery plugin<br/> builds easy customisable lists of social links
+            </div>
+            <div class = "buttons">
+                <a class="btn-download" type="submit" href="https://github.com/88z/sollist/archive/master.zip">
+                    <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> &nbsp; Download
+                </a>
+                <span class ="or"></span> 
+                <a href="#main" class="explore underlined">explore ›</a>
+            </div>
+        </div>
+    </div>
+    <div class="main row" id="main">
+        <div class="col-xs-3">
+            <div id="menu">
+                <ul class="nav">
+                    <li>
+                        <a href="#demo">Simple Demo</a>
+                    </li>
+                    <li>
+                        <a href="#installation">Installation</a>
+                    </li>
+                    <li>
+                        <a href="#themes">Themes</a>
+                    </li>
+                    <li>
+                        <a href="#customtheme">Use custom theme</a>
+                    </li>
+                    <li>
+                        <a href="#hover">Hover effects</a>
+                    </li>
+                     <li>
+                        <a href="#tooltips">Tooltips</a>
+                    </li>
+                    <li>
+                        <a href="#options">Options</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-9">
+            <div class="section" id="demo">
+                <h1>Simple demo</h1>
+                <div class="sollist"></div>
+                    <p class="text">Sollist comes with awesome free for use <a class="underlined" href="#themes">icon themes</a> and provides wide <a class="underlined" href="themes">customization capabilites</a></p>
+            </div>
+            <div class="section" id="installation">
+                <h1>Installation</h1>
+                <h2>
+                    1. Include jQuery and Sollist's plugin files
+                </h2>
+                <p class="text">
+                    <a class="underlined" href ="">Download Sollist</a>, move <code>jquery.sollist.css</code> and <code>sollist-themes</code> folder to your styles folder.  Move <code>jquery.sollist.min.js</code> to your scripts folder.
+                </p>
+                
+                <p class="text info">
+                    You should place <code>sollist-themes</code> folder near <code>jquery.sollist.css</code> file.<br/> You should NOT rename <code>sollist-themes</code> folder.
+                </p>
+                <p class="text">
+                     Include jQuery, <code>jquery.sollist.css</code> and  <code>jquery.sollist.min.js</code> to your page:
+                </p>
+                <pre>
+                    <code class="html">
+    &lt;head&gt;
+    . . .
+
+        &lt;link href=&quot;../sollist/jquery.sollist.css&quot; rel=&quot;stylesheet&quot;&gt;
+        
+    . . .
+
+        &lt;script src=&quot;http://code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;js/jquery.sollist.js&quot;&gt;&lt;/script&gt;
+
+    . . .
+    &lt;/head&gt;
+                    </code>
+                </pre>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <img src="docs-assets/img/tooltip.png" class="pull-right" style="margin-top: -16px"/>
+                    </div>
+                    <div class="col-xs-10">
+                        <p class="text">
+                            If you want to use tooltips with your social icons you should also download <a class="underlined" target="_blank" href="http://iamceege.github.io/tooltipster/">Tooltipster jQuery plugin</a> and include it to your page:
+                        </p>
+                    </div>
+                </div>
+                <pre>
+                    <code class="html">
+    &lt;head&gt;
+    . . .
+
+        &lt;link href=&quot;../sollist/jquery.sollist.css&quot; rel=&quot;stylesheet&quot;&gt;
+        <b>&lt;link href=&quot;css/tooltipster.css&quot; rel=&quot;stylesheet&quot; /&gt;</b>
+    . . .
+
+        &lt;script src=&quot;http://code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+        <b>&lt;script src=&quot;js/jquery.tooltipster.min.js&quot;&gt;&lt;/script&gt;</b>
+        &lt;script src=&quot;js/jquery.sollist.js&quot;&gt;&lt;/script&gt;
+
+    . . .
+    &lt;/head&gt;
+                    </code>
+                </pre>
+                <h2>
+                    2. Setup HTML
+                </h2>
+                <p class="text">Create element(s) to contain your social links:</p>
+                <pre>
+                    <code class="html">
+    &lt;div id=&quot;sollist&quot;&gt;&lt;/div&gt;
+                    </code>
+                </pre>
+                <h2>
+                    3. Activate Sollist
+                </h2>
+                <p class="text">Add the following script after <code>jquery.sollist.min.js</code> inclusion.</p>
+               <pre class="nomargin">
+                    <code class="javascript">
+    &lt;script&gt;
+        $(function(){
+            $(&quot;#sollist&quot;).sollist({
+                profiles: {
+                    facebook: &#39;http://facebook.com/yourlink&#39;
+                    ,googleplus: &#39;https://plus.google.com/yourlink/posts&#39;
+                    ,dribbble: &#39;https://dribbble.com/yourlink&#39;
+                }
+            });
+        });
+    &lt;/script&gt;
+                    </code>
+                </pre>
+            </div> 
+            <div class="section" id="themes">
+                <h1>Themes</h1>
+                <p class="text">
+                    Sollist comes with number of free for use icon themes. You can choose one by setting up <code>theme</code> propierty:
+                </p>
+                <pre class="nomargin">
+                    <code class="javascript">
+    $(function(){
+        $(&quot;#sollist&quot;).sollist({
+            <b>theme: 'lee-gargano-circle-color'</b>
+            ,profiles: {
+                facebook: &#39;http://facebook.com/yourlink&#39;
+                ,googleplus: &#39;https://plus.google.com/yourlink/posts&#39;
+                ,dribbble: &#39;https://dribbble.com/yourlink&#39;
+            }
+        });
+    });
+                    </code>
+                </pre>
+                <div class="row theme lee-gargano-circle-color" id="lee-gargano-circle-color">
+                    <div class="col-xs-5">
+                        <div class="title">lee-gargano-circle-color</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="https://dribbble.com/shots/1427054-Flat-Minimalistic-Social-Icons">
+                                source 
+                            </a>
+                            &nbsp;
+                            <a class="underlined" target="_blank" href="http://leegargano.com/">
+                                author 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=lee-gargano-circle-color">show all ›</a>
+                    </div>
+                </div>
+                <div class="row theme lee-gargano-square-color" id="lee-gargano-square-color">
+                    <div class="col-xs-5">
+                        <div class="title">lee-gargano-square-color</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="https://dribbble.com/shots/1427054-Flat-Minimalistic-Social-Icons">
+                                source 
+                            </a>
+                            &nbsp;
+                            <a class="underlined" target="_blank" href="http://leegargano.com/">
+                                author 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=lee-gargano-square-color">show all ›</a>
+
+                    </div>
+                </div>
+                <div class="row theme lee-gargano-circle-white" id="lee-gargano-circle-white">
+                    <div class="col-xs-5">
+                        <div class="title">lee-gargano-circle-white</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="https://dribbble.com/shots/1427054-Flat-Minimalistic-Social-Icons">
+                                source 
+                            </a>
+                            &nbsp;
+                            <a class="underlined" target="_blank" href="http://leegargano.com/">
+                                author 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center dark-cell">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                       <a class="underlined" href="themes/index.html?name=lee-gargano-circle-white">show all ›</a>
+
+                    </div>
+                </div>
+                <div class="row theme lee-gargano-square-white" id="lee-gargano-square-white">
+                    <div class="col-xs-5">
+                        <div class="title">lee-gargano-square-white</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="https://dribbble.com/shots/1427054-Flat-Minimalistic-Social-Icons">
+                                source 
+                            </a>
+                            &nbsp;
+                            <a class="underlined" target="_blank" href="http://leegargano.com/">
+                                author 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center dark-cell">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=lee-gargano-square-white">show all ›</a>
+
+                    </div>
+                </div>
+                <div class="row theme mikymeg-color" id="mikymeg-color">
+                    <div class="col-xs-5">
+                        <div class="title">mikymeg-color</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="http://mikymeg.deviantart.com/art/Long-Shadow-Social-Icons-Pack-by-mikymeg-403275097">
+                                source 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=mikymeg-color">show all ›</a>
+
+                    </div>
+                </div>
+                <div class="row theme mikymeg-grey" id="mikymeg-grey">
+                    <div class="col-xs-5">
+                        <div class="title">mikymeg-grey</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="http://mikymeg.deviantart.com/art/Long-Shadow-Social-Icons-Pack-by-mikymeg-403275097">
+                                source 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=mikymeg-grey">show all ›</a>
+                    </div>
+                </div>
+                <div class="row theme fuel" id="fuel">
+                    <div class="col-xs-5">
+                        <div class="title">fuel</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="http://www.graphicsfuel.com/2013/06/simple-flat-social-media-icons-psd-png/">
+                                source 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=fuel">show all ›</a>
+                    </div>
+                </div>
+                <div class="row theme handdrawn" id="handdrawn">
+                    <div class="col-xs-5">
+                        <div class="title">handdrawn</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="http://goodstuffnononsense.com/free-stuff">
+                                source 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=handdrawn">show all ›</a>
+                    </div>
+                </div>
+                <div class="row theme light-circle" id="light-circle">
+                    <div class="col-xs-5">
+                        <div class="title">light-circle</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="http://www.kplitsolutions.com/freebies.html">
+                                source 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=light-circle">show all ›</a>
+                    </div>
+                </div>
+                <div class="row theme martz90-hex" id="martz90-hex">
+                    <div class="col-xs-5">
+                        <div class="title">martz90-hex</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="http://martz90.deviantart.com/art/Hex-Icons-Pack-389706981">
+                                source 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=martz90-hex">show all ›</a>
+                    </div>
+                </div>
+                <div class="row theme victor-bejar" id="victor-bejar">
+                    <div class="col-xs-5">
+                        <div class="title">victor-bejar</div>
+                        <div class="source">
+                            <a class="underlined" target="_blank" href="https://dribbble.com/shots/1161858-Long-Shadow-Social-Icons">
+                                source 
+                            </a>
+                            &nbsp;
+                            <a class="underlined" target="_blank" href="http://www.victorbejar.com/">
+                                author
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-5 text-center">
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-2 more text-right">
+                        <a class="underlined" href="themes/index.html?name=victor-bejar">show all ›</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="customtheme">
+                <h1>Use custom theme</h1>
+                <p class="text">Sollist allows you to use your own or third party icon sets.</p>
+                <h2>1. Prepare icon files</h2>
+                <ul>    
+                    <li class="text">Place all icon files in one directory</li>
+                    <li class="text">All icon files should have same extension (i.e. png or jpg)</li>
+                    <li class="text">Icon file name should be the same as related social service name (i.e. facebook.png for facebook or googleplus.png for google+)</li>
+                </ul>
+                <h2>2. Activate Sollist with special options</h2>
+                <p class="text">Activate Sollist with following options:</p>
+                <ul>
+                    <li class="text">
+                        <code>themeDirPath</code> &mdash; path to directory with icons
+                    </li>
+                    <li class="text">
+                        <code>iconFileExtension</code> &mdash; icon files extesion. <i>Default value:</i> <code>'png'</code>.
+                    </li>
+                </ul>
+                <pre class="nomargin"><code>
+    &lt;script&gt;
+        $(function(){
+            $(&quot;#sollist&quot;).sollist({
+                profiles: {
+                    facebook: &#39;http://facebook.com/yourlink&#39;
+                    ,googleplus: &#39;https://plus.google.com/yourlink/posts&#39;
+                    ,dribbble: &#39;https://dribbble.com/yourlink&#39;
+                }
+                <b>,themeDirPath: 'path/to/icon/files'
+                ,iconFileExtension: 'jpg'</b>
+            });
+        });
+    &lt;/script&gt;
+                </code></pre>
+                
+            </div>
+            <div class="section" id="hover">
+                <h1>
+                    Hover effects
+                </h1>
+                <h2>Built-in hover effects</h2>
+                <p class="text mar" >
+                    You can choose appropriate icon hover effect by setting up <code>hoverEffect</code> option.
+                </p>
+                <pre><code>
+    &lt;script&gt;
+        $(function(){
+            $(&quot;#sollist&quot;).sollist({
+                profiles: {
+                    facebook: &#39;http://facebook.com/yourlink&#39;
+                    ,googleplus: &#39;https://plus.google.com/yourlink/posts&#39;
+                    ,dribbble: &#39;https://dribbble.com/yourlink&#39;
+                }
+                <b>,hoverEffect: 'fade-out'</b>
+            });
+        });
+    &lt;/script&gt;
+                </code></pre>
+                <p class="text mar" style="margin-bottom: 20px;">
+                    Available hover effects:
+                </p>
+                <div class="row" style="margin-left: -70px;">
+                    <div class="col-xs-3 fade-out example">
+                        <div class="title">fade-out</div>
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-3 fade-in example">
+                        <div class="title">fade-in</div>
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-3 rise example">
+                        <div class="title">rise</div>
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-3 rotate example">
+                        <div class="title">rotate</div>
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-3 shrink example">
+                        <div class="title">shrink</div>
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-3 grow example">
+                        <div class="title">grow</div>
+                        <div class="sollist"></div>
+                    </div>
+                    <div class="col-xs-3 bounce example">
+                        <div class="title">bounce</div>
+                        <div class="sollist"></div>
+                    </div>
+                </div>
+                <h2>Custom hover functions</h2>
+                <p class="text">
+                    You can implement your own hover functions and set them to <code>hoverInFunction</code> and <code>hoverOutFucntion</code> parameters.
+                </p>
+                <pre><code>
+    $(function() {
+        $('#example').sollist({
+            profiles: {
+                instagram: 'http://imstagram.com/polinametelkova'
+            }
+            <b>,hoverInFunction: function($item){
+                $item.css({"padding-left": "50px", "transition-duration": "0.1s"});
+            }
+            ,hoverOutFunction: function($item){
+                $item.css({"padding-left": "0px", "transition-duration": "0.1s"});
+            }</b>
+        });
+    });
+                </code></pre>
+                <p class="text">
+                    Result:
+                </p>
+                <div id="custom-hover" class="sollist nomargin">
+                    
+                </div>
+            </div>
+            <div class="section" id="tooltips">
+                <h1>Tooltips</h1>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <img src="docs-assets/img/tooltip.png" class="pull-right" style="margin-top: -40px"/>
+                    </div>
+                </div>
+                <h2>Setup tooltipster</h2>
+                 <p class="text">
+                    Download <a class="underlined" target="_blank" href="http://iamceege.github.io/tooltipster/">Tooltipster jQuery plugin</a> and include it to your page:
+                </p>
+                
+                <pre>
+                    <code class="html">
+    &lt;head&gt;
+    . . .
+
+        &lt;link href=&quot;../sollist/jquery.sollist.css&quot; rel=&quot;stylesheet&quot;&gt;
+        <b>&lt;link href=&quot;css/tooltipster.css&quot; rel=&quot;stylesheet&quot; /&gt;</b>
+    . . .
+
+        &lt;script src=&quot;http://code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+        <b>&lt;script src=&quot;js/jquery.tooltipster.min.js&quot;&gt;&lt;/script&gt;</b>
+        &lt;script src=&quot;js/jquery.sollist.js&quot;&gt;&lt;/script&gt;
+
+    . . .
+    &lt;/head&gt;
+                    </code>
+                </pre>
+                <p class="text info" style="margin-top: -35px;">
+                    You should include <code>jquery.tooltipster.min.js</code> before <code>jquery.sollist.js</code>.
+                </p>
+                <h2>Tooltips options</h2>
+                <ul>
+                    <li class="text">
+                        <code>showTooltips</code> &mdash; if <code>true</code>, sollist will show tooltips. <i>Default value:</i> <code>false</code>.
+                    </li>
+                    <li class="text">
+                        <code>tooltipsterOptions</code> &mdash; object with tooltipster plugin options. <a class="underlined" target="_blank" href="http://iamceege.github.io/tooltipster/#options">Tooltipster options documentation</a>.
+                    </li>
+                    <li class="text">
+                        <code>tooltips</code> &mdash; object with tooltip texts. <i>Default tooltip text is service name</i>
+                    </li>
+                </ul>
+                <p class="text">Example:</p>
+                <pre><code>
+    $("#example").sollist({
+        profiles: {
+            facebook: 'http://facebook.com/zuck'
+            ,deviantart:'http://mikymeg.deviantart.com/'
+            ,instagram: 'https://instagram.com/polinametelkova'
+        }
+         <b>,showTooltips: true
+        ,tooltipsterOptions: {
+            theme: "sl-tooltip-black"
+        }
+       ,tooltips:{
+            //facebook tooltip will be 'facebook'
+            deviantart: 'icons author page'
+            ,instagram: 'pretty girl'
+        }</b>
+    });
+                </code></pre>
+                <h2>Themes</h2>
+                <p class="text">Sollist comes with two built-in tooltip themes: <code>sl-tooltip-black</code> and <code>sl-tooltip-white</code>.</p>
+                <div class="row" style="margin-left: -45px; margin-bottom: 35px;">
+                    <div class="col-xs-3 example">
+                        <div class="title">sl-tooltip-black</div>
+                        <img src="docs-assets/img/tooltip.png"/>  
+                    </div>
+                    <div class="col-xs-3 example">
+                        <div class="title">sl-tooltip-white</div>
+                        <img src="docs-assets/img/tooltip-white.png"/>  
+                    </div>
+                </div>
+                <p class="text">
+                    You can also create your own tooltipster theme. Look for <b>Customizing Your Tooltipster's Style</b> chapter at <a class="underlined" target="_blank" href="http://iamceege.github.io/tooltipster/#getting-started">tooltipster documentation page</a>.
+                </p>
+            </div>
+            
+            <div class="section" id="options">
+                <h1>Options</h1>
+                <table class="table">
+                <tr>
+                    <th>Option</th>
+                    <th>Type</th>
+                    <th width="400">Description</th>
+                    <th width="200">Default</th>
+                
+                </tr>
+                <tr>
+                    <td class="text"><code>profiles</code></td>    
+                    <td class="text"><code>object</code></td>    
+                    <td class="text">
+                         <div class="required">The only required option.</div>
+                        Object with profile links. Key is service name, value is profile link.
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>theme</code></td>    
+                    <td class="text"><code>string</code></td>    
+                    <td class="text">Icon theme name. <a href="#themes" class="underlined">Themes list.</a></td>
+                    <td class="text">
+                        <code>'lee-gargano-circle-color'</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>pixelsBetweenItems</code></td>    
+                    <td class="text"><code>int</code></td>    
+                    <td class="text">Space between icons in pixels.</td>
+                    <td class="text">
+                        <code>10</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>themeDirPath</code></td>    
+                    <td class="text"><code>string</code></td>    
+                    <td class="text">Path from base url to custom icon theme directory. If you use built-in icon themes, leave this option empty.</td>
+                    <td class="text">
+                        <code>''</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>containerTag</code></td>    
+                    <td class="text"><code>string</code></td>    
+                    <td class="text">Icons container element tag.</td>
+                    <td class="text">
+                        <code>'ul'</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>elementTag</code></td>    
+                    <td class="text"><code>string</code></td>    
+                    <td class="text">Icon element tag</td>
+                    <td class="text">
+                        <code>'li'</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>size</code></td>    
+                    <td class="text"><code>int</code></td>    
+                    <td class="text">Icon size</td>
+                    <td class="text">
+                        <code>32</code>
+                    </td>
+                <tr>
+                    <td class="text"><code>iconFileExtension</code></td>    
+                    <td class="text"><code>string</code></td>    
+                    <td class="text">Custom icon theme files extension. If you use built-in icon themes, leave this option empty.</td>
+                    <td class="text">
+                        <code>'png'</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>hoverEffect</code></td>    
+                    <td class="text"><code>string</code></td>    
+                    <td class="text">Icon hover animation effect. If you don't need hover animation, leave this option empty. <br/><a href="#hover" class="underlined">Hover animation effects list.</a></td>
+                    
+                    <td class="text">
+                        <code>''</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>newTab</code></td>    
+                    <td class="text"><code>boolean</code></td>    
+                    <td class="text">
+                        If <code>true</code>, Sollist will open social profiles page in new tab. 
+                    </td>
+                    
+                    <td class="text">
+                        <code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>showTooltips</code></td>    
+                    <td class="text"><code>boolean</code></td>    
+                    <td class="text">
+                        If <code>true</code>, Sollist will show tooltip on icon hover. 
+                        <br/><a href="#tooltips" class="underlined">More about tooltips setup and customization.</a>
+                    </td>
+                    
+                    <td class="text">
+                        <code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>tooltips</code></td>    
+                    <td class="text"><code>object</code></td>    
+                    <td class="text">
+                         Object with tooltip texts. Key is service name, value is tooltip text.
+                        <br/><a href="#tooltips" class="underlined">
+                        More about tooltips setup and customization.</a>
+                    </td>
+                    
+                    <td class="text">
+                        <code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text"><code>itemClass</code></td>    
+                    <td class="text"><code>string</code></td>    
+                    <td class="text">
+                        Custom class that will be added to each icon element.
+                    </td>
+                    
+                    <td class="text">
+                        <code>''</code>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="text"><code>itemCss</code></td>    
+                    <td class="text"><code>object</code></td>    
+                    <td class="text">
+                        Custom css that will be added to each icon element.
+                    </td>
+                    
+                    <td class="text">
+                        <code>''</code>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    <div zstyle="margin-top: 20px;"></div>
+    <div class="footer">
+         <div class="sollist" style="margin: 0"></div>
+         <a href="https://github.com/88z">github.com/88z</a>
+         
+    </div>
+   <div class="redstrip"></div>
+        <script type="text/javascript" src="docs-assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="docs-assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="docs-assets/js/jquery.sticky.js"></script>
+        <script type="text/javascript" src="docs-assets/js/jquery.tooltipster.min.js"></script>
+        <script type="text/javascript" src="dist/jquery.sollist.min.js"></script>
+        <script type="text/javascript" src="docs-assets/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="docs-assets/js/demos.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script type="text/javascript">
+            $('body').scrollspy({ target: '#menu' });
+            $("#menu").sticky({topSpacing:0});
+        </script>
+    </body>
+</html>
